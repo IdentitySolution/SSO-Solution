@@ -3,7 +3,13 @@
   "author": "Daniel Carrera",
   "classifications": ["Web", "Solution", "Identity"],
   "identity": "Wundr.Community.CreateIdentitySolution",
-  "name": "Open Source Identity Solution",
-  "shortName": "identitysln",
-  "sourceName": "TemplateSourceName"
+  "name": "Open Source Single-Sign-On Solution",
+  "shortName": "sso-sln",
+  "sourceName": "TemplateSourceName",
+  "symbols": {
+    "domainName": {
+      "type": "parameter",
+      "replaces": "website.com"
+    }
+  }
 }
