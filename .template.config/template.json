@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Daniel Carrera",
+  "classifications": ["Web", "Solution", "Identity"],
+  "identity": "Wundr.Community.CreateIdentitySolution",
+  "name": "Open Source Identity Solution",
+  "shortName": "identitysln",
+  "sourceName": "TemplateSourceName"
+}
