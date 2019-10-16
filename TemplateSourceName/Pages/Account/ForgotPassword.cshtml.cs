@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using TemplateSourceName.Models;
+using TemplateSourceName.Services;
 
 namespace TemplateSourceName.Pages.Account
 {
@@ -54,7 +54,7 @@ namespace TemplateSourceName.Pages.Account
                 var callbackUrl = Url.Page(
                     "/Account/ResetPassword",
                     pageHandler: null,
-                    values: new { area = "Identity", code },
+                    values: new { code },
                     protocol: Request.Scheme);
 
                 await _emailSender.SendEmailAsync(

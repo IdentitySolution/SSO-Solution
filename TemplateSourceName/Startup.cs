@@ -5,12 +5,14 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TemplateSourceName.Data;
 using TemplateSourceName.Models;
+using TemplateSourceName.Services;
 
 namespace TemplateSourceName
 {
@@ -31,15 +33,16 @@ namespace TemplateSourceName
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
-            //services.AddControllersWithViews();
+            services.AddTransient<IEmailSender, EmailSender>();
             services.AddRazorPages();
 
             // Block 1: Add ASP.NET Identity
             services.AddEntityFrameworkNpgsql().
                 AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(connectionString));
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedEmail = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             // Block 2: Add IdentityServer4
             var builder = services.AddIdentityServer(options =>
@@ -48,9 +51,6 @@ namespace TemplateSourceName
                 options.Events.RaiseInformationEvents = true;
                 options.Events.RaiseFailureEvents = true;
                 options.Events.RaiseSuccessEvents = true;
-
-                //options.UserInteraction.ConsentUrl = "/Identity/Consent";
-
             })
                 // this adds the config data from DB (clients, resources)
                 .AddConfigurationStore(options =>
@@ -80,7 +80,7 @@ namespace TemplateSourceName
                 throw new Exception("need to configure key material");
             }
 
-            services.AddAuthentication();
+            // services.AddAuthentication();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

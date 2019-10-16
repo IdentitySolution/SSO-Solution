@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "MvcClientImplicit": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://mvc-implicit.website.com:5002"
+    }
+  }
+}

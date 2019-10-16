@@ -2,11 +2,11 @@
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using TemplateSourceName.Models;
+using TemplateSourceName.Services;
 
 namespace TemplateSourceName.Pages.Account
 {
@@ -52,7 +52,7 @@ namespace TemplateSourceName.Pages.Account
                 EmailConfirmationUrl = Url.Page(
                     "/Account/ConfirmEmail",
                     pageHandler: null,
-                    values: new { area = "Identity", userId = userId, code = code },
+                    values: new { userId = userId, code = code },
                     protocol: Request.Scheme);
             }
 

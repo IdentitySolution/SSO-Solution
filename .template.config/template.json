@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Daniel Carrera",
-  "classifications": ["Web", "Solution", "Identity"],
+  "classifications": ["Web", "Solution", "Identity", "SSO"],
   "identity": "Wundr.Community.CreateIdentitySolution",
   "name": "Open Source Single-Sign-On Solution",
   "shortName": "sso-sln",
@@ -11,5 +11,10 @@
       "type": "parameter",
       "replaces": "website.com"
     }
-  }
+  },
+  "sources": [
+    {
+      "modifiers": [{ "exclude": ["**/*.vs/**", "**/*.vscode/**", ".git/**"] }]
+    }
+  ]
 }

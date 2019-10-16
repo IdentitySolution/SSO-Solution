@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "MvcClientHybrid": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://mvc-hybrid.website.com:5003"
+    }
+  }
+}
