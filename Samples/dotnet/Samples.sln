@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "dotnet\Client\Client.csproj", "{D820F57B-CBAB-4E19-876D-204B60EBF8FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{D820F57B-CBAB-4E19-876D-204B60EBF8FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "dotnet\Api\Api.csproj", "{0D622AC7-439F-41F8-996C-A9C84028F3F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{0D622AC7-439F-41F8-996C-A9C84028F3F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClientImplicit", "dotnet\MvcClientImplicit\MvcClientImplicit.csproj", "{C8A2F5CD-F47A-4E52-87A9-C08354DCD80C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClientImplicit", "MvcClientImplicit\MvcClientImplicit.csproj", "{C8A2F5CD-F47A-4E52-87A9-C08354DCD80C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClientHybrid", "dotnet\MvcClientHybrid\MvcClientHybrid.csproj", "{78BE012B-4C1E-49DB-AFDB-4C75937AAC42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClientHybrid", "MvcClientHybrid\MvcClientHybrid.csproj", "{78BE012B-4C1E-49DB-AFDB-4C75937AAC42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
