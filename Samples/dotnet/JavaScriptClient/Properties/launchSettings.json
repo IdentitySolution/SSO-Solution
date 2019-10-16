@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "JavaScriptClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://js.website.com:5004"
+    }
+  }
+}

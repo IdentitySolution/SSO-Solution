@@ -45,10 +45,10 @@ namespace Api
                 // this defines a CORS policy called "default"
                 options.AddPolicy("default", policy =>
                 {
-                    policy.WithOrigins("http://js.website.com:5104") // allow JavaScriptClient
+                    policy.WithOrigins("http://js.website.com:5004") // allow JavaScriptClient
                         .AllowAnyHeader()
                         .AllowAnyMethod();
-                    policy.WithOrigins("http://react.website.com:5105") // allow react-client
+                    policy.WithOrigins("http://react.website.com:5005") // allow react-client
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
