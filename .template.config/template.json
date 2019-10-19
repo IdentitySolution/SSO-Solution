@@ -20,7 +20,11 @@
             "**/*.vs/**",
             "**/*.vscode/**",
             ".git/**",
-            "**/*.certificates/**"
+            "**/*certificates/**",
+            "**/*node_modules/**",
+            "**/*.pfx",
+            "**/*.pem",
+            "**/*.rsa"
           ]
         }
       ]
