@@ -3,7 +3,7 @@
     "TemplateSourceName": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://identity.website.com:5000",
+      "applicationUrl": "https://identity.website.com:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

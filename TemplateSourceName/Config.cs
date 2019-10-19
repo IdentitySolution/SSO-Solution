@@ -58,12 +58,12 @@ namespace TemplateSourceName
                     AllowedGrantTypes = GrantTypes.Implicit,
 
                     // where to redirect to after login
-                    RedirectUris = {"http://mvc-implicit.website.com:5002/signin-oidc"},
+                    RedirectUris = {"https://mvc-implicit.website.com:5005/signin-oidc"},
 
                     // where to redirect to after logout
-                    PostLogoutRedirectUris = {"http://mvc-implicit.website.com:5002/signout-callback-oidc"},
+                    PostLogoutRedirectUris = {"https://mvc-implicit.website.com:5005/signout-callback-oidc"},
 
-                    FrontChannelLogoutUri = "http://mvc-implicit.website.com:5002/home/logout",
+                    FrontChannelLogoutUri = "https://mvc-implicit.website.com:5005/home/logout",
 
                     AllowedScopes = new List<string>{
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -83,9 +83,9 @@ namespace TemplateSourceName
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris           = { "http://mvc-hybrid.website.com:5003/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://mvc-hybrid.website.com:5003/signout-callback-oidc" },
-                    FrontChannelLogoutUri = "http://mvc-hybrid.website.com:5003/home/logout",
+                    RedirectUris           = { "https://mvc-hybrid.website.com:5007/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://mvc-hybrid.website.com:5007/signout-callback-oidc" },
+                    FrontChannelLogoutUri = "https://mvc-hybrid.website.com:5007/home/logout",
 
                     AllowedScopes =
                     {
@@ -106,9 +106,9 @@ namespace TemplateSourceName
                     RequirePkce = true,
                     RequireClientSecret = false,
 
-                    RedirectUris =           { "http://js.website.com:5004/callback.html" },
-                    PostLogoutRedirectUris = { "http://js.website.com:5004/index.html" },
-                    AllowedCorsOrigins =     { "http://js.website.com:5004" },
+                    RedirectUris =           { "https://js.website.com:5009/callback.html" },
+                    PostLogoutRedirectUris = { "https://js.website.com:5009/index.html" },
+                    AllowedCorsOrigins =     { "https://js.website.com:5009" },
 
                     AllowedScopes =
                     {
@@ -127,9 +127,9 @@ namespace TemplateSourceName
                     RequirePkce = true,
                     RequireClientSecret = false,
 
-                    RedirectUris =           { "http://react.website.com:5005/callback" },
-                    PostLogoutRedirectUris = { "http://react.website.com:5005/" },
-                    AllowedCorsOrigins =     { "http://react.website.com:5005" },
+                    RedirectUris =           { "https://react.website.com:5011/callback" },
+                    PostLogoutRedirectUris = { "https://react.website.com:5011/" },
+                    AllowedCorsOrigins =     { "https://react.website.com:5011" },
 
                     AllowedScopes =
                     {

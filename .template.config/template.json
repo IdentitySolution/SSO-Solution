@@ -14,23 +14,48 @@
   },
   "sources": [
     {
-      "modifiers": [{ "exclude": ["**/*.vs/**", "**/*.vscode/**", ".git/**"] }]
+      "modifiers": [
+        {
+          "exclude": [
+            "**/*.vs/**",
+            "**/*.vscode/**",
+            ".git/**",
+            "**/*.certificates/**"
+          ]
+        }
+      ]
     }
   ],
   "postActions": [
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+
+      "condition": "(OS == \"Windows_NT\")",
       "args": {
-        "executable": "CallAddHosts.cmd",
+        "executable": ".\\Scripts\\CallAddHosts.cmd",
         "args": ""
       },
       "manualInstructions": [
         {
-          "text": "Run 'CallAddHosts.cmd'"
+          "text": "Run '\\Scripts\\CallAddHosts.cmd' from project root"
         }
       ],
-      "continueOnError": false,
-      "description ": "Adds the required hostnames to the windows hosts file"
+      "continueOnError": false
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "description ": "Creates and imports a subdomain wildcard certificate for development purposes only",
+      "condition": "(OS == \"Windows_NT\")",
+      "args": {
+        "executable": ".\\Scripts\\CallCreateSSLCertificate.cmd",
+        "args": ""
+      },
+      "manualInstructions": [
+        {
+          "text": "Run '\\Scripts\\CallCreateSSLCertificate.cmd' from project root"
+        }
+      ],
+      "continueOnError": false
     }
   ]
 }

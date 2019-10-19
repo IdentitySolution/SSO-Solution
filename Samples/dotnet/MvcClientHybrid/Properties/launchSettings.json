@@ -5,7 +5,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://mvc-hybrid.website.com:5003"
+      "applicationUrl": "https://mvc-hybrid.website.com:5007"
     }
   }
 }

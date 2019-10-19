@@ -35,7 +35,7 @@ namespace MvcClientImplicit
                 .AddCookie("Cookies")
                 .AddOpenIdConnect("oidc", options =>
                 {
-                    options.Authority = "http://identity.website.com:5000";
+                    options.Authority = "https://identity.website.com:5001";
                     options.RequireHttpsMetadata = false;
 
                     options.ClientId = "mvc_implicit";
@@ -65,6 +65,7 @@ namespace MvcClientImplicit
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

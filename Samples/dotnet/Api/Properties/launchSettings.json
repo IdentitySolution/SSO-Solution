@@ -3,7 +3,7 @@
   "profiles": {
     "Api": {
       "commandName": "Project",
-      "applicationUrl": "http://api.website.com:5001",
+      "applicationUrl": "https://api.website.com:5003",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

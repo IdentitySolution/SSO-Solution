@@ -38,7 +38,7 @@ namespace MvcClientHybrid
                 {
                     options.SignInScheme = "Cookies";
 
-                    options.Authority = "http://identity.website.com:5000";
+                    options.Authority = "https://identity.website.com:5001";
                     options.RequireHttpsMetadata = false;
 
                     options.ClientId = "mvc_hybrid";
@@ -76,6 +76,7 @@ namespace MvcClientHybrid
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

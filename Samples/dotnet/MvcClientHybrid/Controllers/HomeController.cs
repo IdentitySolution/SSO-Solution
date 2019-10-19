@@ -47,7 +47,7 @@ namespace MvcClientHybrid.Controllers
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                var content = await client.GetStringAsync("http://api.website.com:5001/identity");
+                var content = await client.GetStringAsync("https://api.website.com:5003/identity");
                 ViewBag.Json = JArray.Parse(content).ToString();
             };
             return View("json");

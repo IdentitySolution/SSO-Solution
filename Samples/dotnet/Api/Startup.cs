@@ -33,11 +33,11 @@ namespace Api
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://identity.website.com:5000";
+                    options.Authority = "https://identity.website.com:5001";
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "api1";
                     options.ApiSecret = "secret";
-                    
+
                 });
 
             services.AddCors(options =>
@@ -45,10 +45,10 @@ namespace Api
                 // this defines a CORS policy called "default"
                 options.AddPolicy("default", policy =>
                 {
-                    policy.WithOrigins("http://js.website.com:5004") // allow JavaScriptClient
+                    policy.WithOrigins("https://js.website.com:5009") // allow JavaScriptClient
                         .AllowAnyHeader()
                         .AllowAnyMethod();
-                    policy.WithOrigins("http://react.website.com:5005") // allow react-client
+                    policy.WithOrigins("https://react.website.com:5011") // allow react-client
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });

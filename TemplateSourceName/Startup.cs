@@ -104,11 +104,12 @@ namespace TemplateSourceName
             {
                 context.Response.Headers.Add(
                     "Content-Security-Policy",
-                    "frame-src http://*.website.com:*");
+                    "frame-src https://*.website.com:*");
 
                 await next();
             });
 
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseIdentityServer();

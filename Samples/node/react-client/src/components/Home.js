@@ -7,7 +7,7 @@ export default () => {
   }
   function handleCallApi() {
     oidcManager.getUser().then(function(user) {
-      var url = "http://api.website.com:5001/identity";
+      var url = "https://api.website.com:5003/identity";
 
       var xhr = new XMLHttpRequest();
       xhr.open("GET", url);

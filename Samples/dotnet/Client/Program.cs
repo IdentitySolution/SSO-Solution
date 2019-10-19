@@ -15,7 +15,7 @@ namespace Client
 
             var disco = await client.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
             {
-                Address = "http://identity.website.com:5000",
+                Address = "https://identity.website.com:5001",
                 Policy = { RequireHttps = false }
             });
             if (disco.IsError)
@@ -46,9 +46,9 @@ namespace Client
             // call api
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
-
+            string baseUrl = "https://api.website.com:5003";
             // call authorized identity
-            var response = await apiClient.GetAsync("http://api.website.com:5001/identity");
+            var response = await apiClient.GetAsync(baseUrl + "/identity");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
@@ -60,7 +60,7 @@ namespace Client
             }
 
             // call authorized controller
-            response = await apiClient.GetAsync("http://api.website.com:5001/cake");
+            response = await apiClient.GetAsync(baseUrl + "/cake");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
@@ -72,7 +72,7 @@ namespace Client
             }
 
             // call unauthorized controller
-            response = await apiClient.GetAsync("http://api.website.com:5001/weatherforecast");
+            response = await apiClient.GetAsync(baseUrl + "/weatherforecast");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);

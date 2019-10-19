@@ -5,7 +5,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://mvc-implicit.website.com:5002"
+      "applicationUrl": "https://mvc-implicit.website.com:5005"
     }
   }
 }
