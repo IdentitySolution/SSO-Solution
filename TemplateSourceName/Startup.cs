@@ -47,6 +47,8 @@ namespace TemplateSourceName
             // Block 2: Add IdentityServer4
             var builder = services.AddIdentityServer(options =>
             {
+                options.UserInteraction.ErrorUrl = "/Error";
+
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
                 options.Events.RaiseFailureEvents = true;

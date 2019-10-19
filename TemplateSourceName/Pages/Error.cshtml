@@ -10,8 +10,20 @@
 @if (Model.ShowRequestId)
 {
     <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        <strong>Request ID:</strong> <code>@Model.Error.RequestId</code>
     </p>
+}
+
+@if(Model?.Error?.Error != null)
+{
+    <div>
+        Sorry there was an error <strong><em></em></strong>: @Model.Error.Error
+
+        @if (Model.Error.ErrorDescription != null)
+        {
+            <div>@Model.Error.ErrorDescription</div>
+        }
+    </div>
 }
 
 <h3>Development Mode</h3>
