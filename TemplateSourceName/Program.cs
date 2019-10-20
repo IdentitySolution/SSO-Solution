@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.SystemConsole.Themes;
 
 namespace TemplateSourceName
 {
@@ -59,6 +62,8 @@ namespace TemplateSourceName
             var certificateSettings = config.GetSection("CertificateSettings");
             string certificateFile = certificateSettings.GetValue<string>("Filename");
             string certificatePassword = certificateSettings.GetValue<string>("Password");
+            var connectionStrings = config.GetSection("ConnectionStrings");
+            string serilogConnectionString = connectionStrings.GetValue<string>("SerilogConnection");
 
 #pragma warning disable IDE0067 // Dispose objects before losing scope. If disposed here, application will fail
             var certificate = new X509Certificate2(certificateFile, certificatePassword);
@@ -76,6 +81,16 @@ namespace TemplateSourceName
                         });
                     });
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseSerilog((context, configuration) =>
+                    {
+                        configuration
+                            .MinimumLevel.Debug()
+                            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                            .MinimumLevel.Override("System", LogEventLevel.Information)
+                            .Enrich.FromLogContext()
+                            .WriteTo.File(@"TemplateSourceName_log_.txt", rollingInterval: RollingInterval.Day)
+                            .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Literate);
+                    });
                 });
         }
     }
