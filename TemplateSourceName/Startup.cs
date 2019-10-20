@@ -82,7 +82,6 @@ namespace TemplateSourceName
                 throw new Exception("need to configure key material");
             }
 
-            // services.AddAuthentication();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -105,7 +104,6 @@ namespace TemplateSourceName
                 context.Response.Headers.Add(
                     "Content-Security-Policy",
                     "frame-src https://*.website.com:*");
-
                 await next();
             });
 
