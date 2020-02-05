@@ -34,7 +34,7 @@ It's easy to get started developing your own solution.
 2. Install openssl. Here's a [guide](https://tecadmin.net/install-openssl-on-windows/)
 3. Install [PostGreSql](https://www.postgresql.org/download/windows/)
 4. Open up a cmd or terminal and navigate to where you want to create a new solution
-5. Install the template by running `dotnet new -install sso-sln`
+5. Install the template by running `dotnet new --install sso-sln`
 
 #### Create New Solution
 
